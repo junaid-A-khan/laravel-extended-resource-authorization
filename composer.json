@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "junaid-A-khan\\ExtendedResourceAuthorization\\ExtendedResourceAuthorizationServiceProvider"
+                "junaid-A-khan\\laravel-extended-resource-authorization\\ExtendedResourceAuthorizationServiceProvider"
             ]
         }
     },
