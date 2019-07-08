@@ -1,0 +1,41 @@
+{
+    "name": "junaid-A-khan/ExtendedResourceAuthorization",
+    "description": "Extended Resource Authorization",
+    "homepage": "https://github.com/junaid-A-khan/laravel-extended-resource-authorization",
+    "keywords":
+    [
+        "laravel",
+        "extended",
+        "resource",
+        "policy",
+        "authorization",
+        "authorize custom methods"
+    ],
+    "authors": [
+        {
+            "name": "junaidahmadkhan",
+            "email": "junaid851@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php" : "^7.1",
+        "illuminate/support": "~5.7.0|~5.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "junaid-A-khan\\ExtendedResourceAuthorization\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "junaid-A-khan\\ExtendedResourceAuthorization\\ExtendedResourceAuthorizationServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
