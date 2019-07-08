@@ -25,11 +25,11 @@ First you will need to use ExtendedAuthorizesRequest trait in your app/Http/Cont
     use Illuminate\Routing\Controller as BaseController;
     use Illuminate\Foundation\Validation\ValidatesRequests;
     use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-    use ExtendedResourceAuthorization\Auth\Access\ExtendedAuthorizesResource;
+    use ExtendedResourceAuthorization\Auth\Access\ExtendedAuthorizesRequest;
     
     class Controller extends BaseController
     {
-        use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ExtendedAuthorizesResource;
+        use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ExtendedAuthorizesRequest;
     }
  
 
