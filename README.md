@@ -15,7 +15,7 @@ which only works for default resource routes show, create, edit, store, update a
 
 ### Simple Usage
 #### Step 1:
-First you will need to use ExtendedAuthorizesRequest trait in your app/Http/Controllers/Controller.php
+First you will need to remove AuthorizesRequests trait and add/use ExtendedAuthorizesRequest trait in your app/Http/Controllers/Controller.php
  
     <?php
     
@@ -24,12 +24,11 @@ First you will need to use ExtendedAuthorizesRequest trait in your app/Http/Cont
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Routing\Controller as BaseController;
     use Illuminate\Foundation\Validation\ValidatesRequests;
-    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
     use ExtendedResourceAuthorization\Auth\Access\ExtendedAuthorizesRequests;
     
     class Controller extends BaseController
     {
-        use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ExtendedAuthorizesRequests;
+        use ExtendedAuthorizesRequests, DispatchesJobs, ValidatesRequests;
     }
  
 
