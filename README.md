@@ -15,13 +15,23 @@ which only works for default resource routes show, create, edit, store, update a
 
 ### Simple Usage
 #### Step 1:
-First you will need to change in your app/Http/Controllers/Controller.php
+First you will need to use ExtendedAuthorizesRequest trait in your app/Http/Controllers/Controller.php
  
-    use Illuminate\Routing\Controller as BaseController;
-
-to
+    <?php
     
-    use ExtendedResourceAuthorization\Controller as BaseController;
+    namespace App\Http\Controllers;
+    
+    use Illuminate\Foundation\Bus\DispatchesJobs;
+    use Illuminate\Routing\Controller as BaseController;
+    use Illuminate\Foundation\Validation\ValidatesRequests;
+    use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+    use ExtendedResourceAuthorization\Auth\Access\ExtendedAuthorizesResource;
+    
+    class Controller extends BaseController
+    {
+        use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ExtendedAuthorizesResource;
+    }
+ 
 
 
 #### Note:

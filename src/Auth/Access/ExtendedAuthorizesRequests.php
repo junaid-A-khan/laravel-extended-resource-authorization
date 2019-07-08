@@ -12,7 +12,7 @@
     use Illuminate\Support\Str;
 
 
-    trait AuthorizesRequests
+    trait ExtendedAuthorizesRequests
     {
         /**
          * Authorize a resource action based on the incoming request.
