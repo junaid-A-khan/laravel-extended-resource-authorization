@@ -24,14 +24,14 @@
     },
     "autoload": {
         "psr-4": {
-            "junaid-ahmad-khan\\ExtendedResourceAuthorization\\": "src/"
+            "ExtendedResourceAuthorization\\": "src/"
         }
     },
     "license": "MIT",
     "extra": {
         "laravel": {
             "providers": [
-                "junaid-ahmad-khan\\laravel-extended-resource-authorization\\ExtendedResourceAuthorizationServiceProvider"
+                "ExtendedResourceAuthorization\\ExtendedResourceAuthorizationServiceProvider"
             ]
         }
     },
