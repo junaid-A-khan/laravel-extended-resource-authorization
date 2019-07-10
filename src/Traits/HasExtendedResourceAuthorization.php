@@ -23,6 +23,6 @@
          *
          * @var array
          */
-        public static $extendedResourceMethodsWithoutModel = [];
+        public static $extendedResourceMethodsWithoutModels = [];
 
     }

@@ -24,17 +24,17 @@
          * @param  array  $options
          * @param  \Illuminate\Http\Request|null  $request
          * @param  array $extendedResourceAbilities
-         * @param  array $extendedResourceMethodsWithoutModel
+         * @param  array $extendedResourceMethodsWithoutModels
          * @return void
          */
-        public function authorizeResource($model, $parameter = null, array $options = [], $request = null, array $extendedResourceAbilities = [], array $extendedResourceMethodsWithoutModel = [])
+        public function authorizeResource($model, $parameter = null, array $options = [], $request = null, array $extendedResourceAbilities = [], array $extendedResourceMethodsWithoutModels = [])
         {
             $parameter = $parameter ?: Str::snake(class_basename($model));
 
             $middleware = [];
 
             foreach ($this->resourceAbilityMap(!empty($extendedResourceAbilities) ? $extendedResourceAbilities : property_exists ( $model, 'extendedResourceAbilities') ? $model::$extendedResourceAbilities : $extendedResourceAbilities) as $method => $ability) {
-                $modelName = in_array($method, $this->resourceMethodsWithoutModels(!empty($extendedResourceMethodsWithoutModel) ? $extendedResourceMethodsWithoutModel : property_exists ( $model, 'extendedResourceMethodsWithoutModel') ? $model::$extendedResourceMethodsWithoutModel : $extendedResourceMethodsWithoutModel)) ? $model : $parameter;
+                $modelName = in_array($method, $this->resourceMethodsWithoutModels(!empty($extendedResourceMethodsWithoutModels) ? $extendedResourceMethodsWithoutModels : property_exists ( $model, 'extendedResourceMethodsWithoutModels') ? $model::$extendedResourceMethodsWithoutModels : $extendedResourceMethodsWithoutModels)) ? $model : $parameter;
 
                 $middleware["can:{$ability},{$modelName}"][] = $method;
             }
@@ -64,11 +64,11 @@
 
         /**
          * Get the list of resource methods which do not have model parameters.
-         * @param array $extendedResourceMethodsWithoutModel
+         * @param array $extendedResourceMethodsWithoutModels
          * @return array
          */
-        protected function resourceMethodsWithoutModels(array $extendedResourceMethodsWithoutModel)
+        protected function resourceMethodsWithoutModels(array $extendedResourceMethodsWithoutModels)
         {
-            return array_merge ( ['index', 'create', 'store'],$extendedResourceMethodsWithoutModel);
+            return array_merge ( ['index', 'create', 'store'],$extendedResourceMethodsWithoutModels);
         }
     }

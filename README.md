@@ -38,10 +38,11 @@ There are 2 arguments that can be passed through controller i.e.
 
     $extendedResourceAbilities = [
                         'controller_resource_method_name' => 'policy_resource_ability_name',
-                        'custom_resource_method' => 'custom_resource_method_policy'
+                        'custom_resource_method' => 'custom_resource_method_policy',
+                        'custom_resource_method_without_model' => 'custom_resource_method_without_model'
                     ];
     
-    $extendResourceMethodsWithoutModel = ['custom_resource_method_without_model'];
+    $extendResourceMethodsWithoutModels = ['custom_resource_method_without_model'];
     
 ###### and
 There are 2 properties which can be set on the respective model i.e.
@@ -53,7 +54,8 @@ There are 2 properties which can be set on the respective model i.e.
     */
     public static $extendedResourceAbilities = [
                                       'controller_resource_method_name' => 'policy_resource_ability_name',
-                                      'custom_resource_method' => 'custom_resource_method_policy'
+                                      'custom_resource_method' => 'custom_resource_method_policy',
+                                      'custom_resource_method_without_model' => 'custom_resource_method_without_model'
                                   ];
 
     /**
@@ -61,7 +63,7 @@ There are 2 properties which can be set on the respective model i.e.
     *
     * @var array
     */
-    public static $extendResourceMethodsWithoutModel = ['custom_resource_method_without_model'];
+    public static $extendResourceMethodsWithoutModels = ['custom_resource_method_without_model'];
 
  ##### Use Through Controller: 
  Pass both arguments through controller
@@ -72,12 +74,13 @@ There are 2 properties which can be set on the respective model i.e.
             
                 $extendedResourceAbilities = [
                     'controller_resource_method_name' => 'policy_resource_ability_name',
-                    'custom_resource_method' => 'custom_resource_method_policy'
+                    'custom_resource_method' => 'custom_resource_method_policy',
+                    'custom_resource_method_without_model' => 'custom_resource_method_without_model'
                 ];
                 
-                $extendResourceMethodsWithoutModel = ['custom_resource_method_without_model'];
+                $extendResourceMethodsWithoutModels = ['custom_resource_method_without_model'];
                 
-                $this->authorizeResource(Book::class,'book',[],null,$extendedResourceAbilities,$extendedResourceMethodsWithoutModel);
+                $this->authorizeResource(Book::class,'book',[],null,$extendedResourceAbilities,$extendedResourceMethodsWithoutModels);
             }
         } 
  
@@ -101,7 +104,8 @@ Define both properties in the model
             */
             public static $extendedResourceAbilities = [
                                               'controller_resource_method_name' => 'policy_resource_ability_name',
-                                              'custom_resource_method' => 'custom_resource_method_policy'
+                                              'custom_resource_method' => 'custom_resource_method_policy',
+                                              'custom_resource_method_without_model' => 'custom_resource_method_without_model'
                                           ];
                                           
         
@@ -110,7 +114,7 @@ Define both properties in the model
             *
             * @var array
             */
-            public static $extendResourceMethodsWithoutModel = ['custom_resource_method_without_model'];
+            public static $extendResourceMethodsWithoutModels = ['custom_resource_method_without_model'];
             
     }
     
