@@ -1,6 +1,6 @@
 <?php
 
-    namespace ExtendedResourceAuthorization;
+    namespace ExtendedResourceAuthorization\Auth;
 
     use Illuminate\Foundation\Auth\User as Authenticatable;
     use ExtendedResourceAuthorization\Traits\HasExtendedResourceAuthorization;
