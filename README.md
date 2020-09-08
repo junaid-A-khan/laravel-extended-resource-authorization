@@ -1,5 +1,9 @@
-### Installation
+### Installation PHP >=7.4
     composer require junaid-ahmad-khan/laravel-extended-resource-authorization
+---
+
+### Installation PHP <7.3
+    composer require junaid-ahmad-khan/laravel-extended-resource-authorization:1.5
 ---
 
 ### Description
@@ -12,6 +16,7 @@ This package provides an easy way to authorize custom methods when using
         }
     }
 which only works for default resource routes show, create, edit, store, update and destroy
+
 
 ### Simple Usage
 #### Step 1:
