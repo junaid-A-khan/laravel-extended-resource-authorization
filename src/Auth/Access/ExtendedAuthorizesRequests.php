@@ -34,8 +34,8 @@
 
             $middleware = [];
 
-            foreach ( $this->resourceAbilityMap ( (!empty( $extendedResourceAbilities ) ? $extendedResourceAbilities : property_exists ( $model, 'extendedResourceAbilities' )) ? $model::$extendedResourceAbilities : $extendedResourceAbilities ) as $method => $ability ) {
-                $modelName = in_array ( $method, $this->resourceMethodsWithoutModels ( (!empty( $extendedResourceMethodsWithoutModels ) ? $extendedResourceMethodsWithoutModels : property_exists ( $model, 'extendedResourceMethodsWithoutModels' )) ? $model::$extendedResourceMethodsWithoutModels : $extendedResourceMethodsWithoutModels ) ) ? $model : $parameter;
+            foreach ( $this->resourceAbilityMap ( !empty( $extendedResourceAbilities ) ? $extendedResourceAbilities : (property_exists ( $model, 'extendedResourceAbilities' ) ? $model::$extendedResourceAbilities : $extendedResourceAbilities) ) as $method => $ability ) {
+                $modelName = in_array ( $method, $this->resourceMethodsWithoutModels ( !empty( $extendedResourceMethodsWithoutModels ) ? $extendedResourceMethodsWithoutModels : (property_exists ( $model, 'extendedResourceMethodsWithoutModels' ) ? $model::$extendedResourceMethodsWithoutModels : $extendedResourceMethodsWithoutModels )) ) ? $model : $parameter;
 
                 $middleware[ "can:{$ability},{$modelName}" ][] = $method;
             }
