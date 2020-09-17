@@ -3,7 +3,7 @@
 ---
 
 ### Installation PHP <7.3
-    composer require junaid-ahmad-khan/laravel-extended-resource-authorization:1.6
+    composer require junaid-ahmad-khan/laravel-extended-resource-authorization:1.5
 ---
 
 ### Description
